@@ -34,8 +34,19 @@ allButtons.forEach((button) => {
       calculation += input;
       display.innerHTML = calculation;
     } else if (input === "=") {
-      calculation = eval(calculation);
-      display.innerHTML = calculation;
+      let attemptedCalculation = calculation;
+      try {
+        calculation = eval(attemptedCalculation);
+        display.innerHTML = calculation;
+      } catch (err) {
+        calculation = "Bad operation, you tried:";
+        calculation += `\n--> ${attemptedCalculation}`;
+        calculation += `\n${err.message}`;
+        calculation += "\nClick 💀 to reset";
+        display.innerHTML = calculation;
+        calculation = "";
+      }
+
       calculation = "";
     } else if (input === "💀") {
       calculation = "";
