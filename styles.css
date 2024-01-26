@@ -1,0 +1,25 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+textarea {
+    resize: none;  
+    width: 60%
+  }
+
+.keypad > .number {
+    /* border: 1px solid black; */
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: calc(33% - 10px)
+}
+
+.btn {
+    width: 33%;
+}
